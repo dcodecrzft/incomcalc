@@ -33,3 +33,28 @@ div.center {
   position: absolute;
   
 }
+
+div.form-container {
+    margin: 0;
+    position: absolute;
+    left: 43%;
+    width: 200px;
+}
+
+
+
+
+div.form-container-inner {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+input[type=number].form {
+    width: 100%;
+
+}

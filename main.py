@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
+    
     return render_template('index.html')
     if request.method == "POST":
         edu_years = int(request.form['edu_years'])
