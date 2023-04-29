@@ -11,7 +11,6 @@
 **Tools used:**
 - Python 🐍
 - Flask 
-- Numpy
 - pandas
 - sklearn
 - HTML 

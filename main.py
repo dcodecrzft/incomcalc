@@ -17,7 +17,7 @@ def calc():
 
 
 def PredictionModel(years_education:int, hours_per_week:int) -> float:
-    df = pandas.read_csv("census-income.csv")
+    df = pandas.read_csv("StonehillHackathon\incomcalc\census-income.csv")
 
     years_education = abs(int(years_education))
     hours_per_week = abs(int(hours_per_week))
