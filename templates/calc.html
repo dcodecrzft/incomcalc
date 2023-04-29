@@ -1,0 +1,23 @@
+{% extends 'template.html' %}
+
+{% block head %}
+
+
+{% endblock %}
+
+{% block body %}
+<h1 class="title">Calculate your Income!</h1>
+
+<div class="form-container">
+    <div class="form-container-inner">
+        <form action="http://localhost:5000/calc/predict" method="post">
+            <p>Enter Years of Education</p>
+            <p><input type="number" name="Education in Years" required></p>
+            <p>Enter Hours Per Week</p>
+            <p><input type="number" name="Hours Worked Per Week" required></p>
+            <p><input type="submit", name="Submit"></p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

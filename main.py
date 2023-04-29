@@ -14,13 +14,13 @@ def index():
         work_hrs = int(request.form['work_hrs'])
         
 
-@app.route("/calc/", methods=["GET", "POST"])
-def calc():
+@app.route("/calc/")
+def calc(): 
     return render_template("calc.html")
 
 
 
-
+# @app.route("/calc/prediction/", methods=["GET", "POST"])
 def PredictionModel(years_education:int, hours_per_week:int) -> float:
     df = pandas.read_csv("census-income.csv")
 
@@ -42,6 +42,8 @@ def PredictionModel(years_education:int, hours_per_week:int) -> float:
         return final_output
     elif final_output > 1:
         final_output = 1
+        return final_output
+    else:
         return final_output
 
 
