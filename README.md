@@ -14,3 +14,5 @@
 - Numpy
 - pandas
 - sklearn
+- HTML 
+- CSS 

@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Income Calculator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    {% block head %}{% endblock %}
   </head>
   <body>
-	<script src="index.js"></script>
+	{% block body %}{% endblock %}
   </body>
 </html>
