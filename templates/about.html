@@ -1,0 +1,24 @@
+{% extends "template.html" %}
+
+{% block head %}{% endblock %}
+
+{% block body %}
+
+<h1 class="title">About This Tool</h1>
+
+<div style="margin-left: 20px;">
+    <h2 style="font-family: sans-serif;">What is this tool?</h2>
+    <p style="font-family: sans-serif;">This app is tool which you can use to predict your income and poverty status based on 1: the length of your education in years and 2: How many hours you work per week. <br>
+    This app uses a Machine Learning model to predict the result. (Specifically, a linear regression model based on scikit-learn)
+    </p>
+
+    <h2 style="font-family: sans-serif;">How do I use this app?</h2>
+    <p style="font-family: sans-serif;">After heading to Home > Calculate, you'll find the interface in which you can input your details. You need to input the duration of your education in years <br>
+    and how many hours you work per week. Note that they have to be whole numbers. Once you click submit, you'll be taken to a page where you can see the result. If the result is equal to 0, <br>
+    then your income is likely to be >$50K and there is low liklihood of you being in poverty. Whereas if the result is equal to 1, then your income is likely to be &lt;=$50K and there is <br>
+    higher liklihood of you being in poverty.</p>
+
+    <h2 style="font-family: sans-serif;">How does it work?</h2>
+    <p style="font-family: sans-serif;"></p>
+</div>
+{% endblock %}

@@ -17,7 +17,7 @@ def calc():
 
 
 def PredictionModel(years_education:int, hours_per_week:int) -> float:
-    df = pandas.read_csv("StonehillHackathon\incomcalc\census-income.csv")
+    df = pandas.read_csv("census-income.csv")
 
     years_education = abs(int(years_education))
     hours_per_week = abs(int(hours_per_week))
@@ -50,8 +50,19 @@ def predict():
         hrs = request.form['hrs']
         x = PredictionModel(edu_num, hrs)
         return f'<title>Prediction</title><body style="background-color: white"><div style="margin: 0; position: absolute; left: 39%;"> \
-        <h1 style="font-family: sans-serif">Final Output = {x}</h1><br> \
-        <h1 style="font-family: sans-serif">1: <=$50K  0: >$50K</h1></div></body>'
+        <h1 style="font-family: sans-serif">Final Output = {x}</h1></div><br><br><br> \
+        <div style="margin: 0; position: absolute; left: 22%;"><h1 style="font-family: sans-serif">If output is 1: Income is likely <=$50K (Higher risk of poverty) <br> \
+        If output is 0: Income is likely >$50K (Lower risk of poverty)</h1><div style="margin: 0; position: absolute; left: 42%;"><a href="/"><button style="cursor: pointer;">Home ></button></a><br> \
+        <a href="/calc/"><button style="cursor: pointer;">Try Again ></button></a></div></div></body>'
+
+
+@app.route("/about/")
+def about():
+    return render_template("about.html")
+
+
+
+
 
 
 if __name__ == "__main__":
