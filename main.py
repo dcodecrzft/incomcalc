@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 import pandas
 from sklearn.linear_model import LinearRegression
 
@@ -8,12 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    
     return render_template('index.html')
-    if request.method == "POST":
-        edu_years = int(request.form['edu_years'])
-        work_hrs = int(request.form['work_hrs'])
-        
 
 @app.route("/calc/")
 def calc(): 
@@ -21,12 +16,11 @@ def calc():
 
 
 
-# @app.route("/calc/prediction/", methods=["GET", "POST"])
 def PredictionModel(years_education:int, hours_per_week:int) -> float:
     df = pandas.read_csv("census-income.csv")
 
-    years_education = abs(years_education)
-    hours_per_week = abs(hours_per_week)
+    years_education = abs(int(years_education))
+    hours_per_week = abs(int(hours_per_week))
     
     X = df[[" education-num", " hours-per-week"]]
     y = df[" "].map({" <=50K":1, " >50K":0})
@@ -49,6 +43,13 @@ def PredictionModel(years_education:int, hours_per_week:int) -> float:
 
 
 
+@app.route("/calc/prediction", methods=["POST"])
+def predict():
+    if request.method == 'POST':
+        edu_num = request.form['edu']
+        hrs = request.form['hrs']
+        x = PredictionModel(edu_num, hrs)
+        return f'<h1 style="font-family: sans-serif">Final Output = {x}</h1><br><h1 style="font-family: sans-serif">1: <=$50K  0: >$50K</h1>'
 
 
 if __name__ == "__main__":

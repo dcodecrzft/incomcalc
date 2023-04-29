@@ -11,11 +11,11 @@
 
 <div class="form-container">
     <div class="form-container-inner">
-        <form action="http://localhost:5000/calc/predict" method="post">
+        <form action="http://localhost:5000/calc/prediction" method="post">
             <p>Enter Years of Education</p>
-            <input type="number" placeholder="Education in Years" class="form" required>
+            <input type="number" placeholder="Education in Years" class="form" name="edu" required>
             <p>Enter Hours Per Week</p>
-            <input type="number" placeholder="Hours Worked Per Week" class="form" required> <br><br>
+            <input type="number" placeholder="Hours Worked Per Week" class="form" name="hrs" required> <br><br>
             <input type="submit" name="Submit" class="form">
         </form>
     </div>

@@ -5,7 +5,7 @@ h1.title {
 
 body {
     background-color: #51a6d6; 
-  }
+}
 
 
 button.start {
@@ -54,7 +54,9 @@ div.form-container-inner {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-input[type=number].form {
+input.form[type=number] {
     width: 100%;
+    border-radius: 10px;
 
 }
+
