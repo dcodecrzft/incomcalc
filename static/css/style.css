@@ -1,3 +1,14 @@
-h1 {
-    font-family: sans-serif; 
+h1.title {
+    font-family: sans-serif; /* testing */
+    text-align: center;
+}
+
+button.start {
+    font-family: sans-serif;
+}
+
+div.center {
+    margin: 0;
+    position: absolute;
+    left: 50%;
 }

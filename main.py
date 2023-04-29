@@ -7,9 +7,20 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def test():
+def index():
     return render_template('index.html')
+    if request.method == "POST":
+        edu_years = int(request.form['edu_years'])
+        work_hrs = int(request.form['work_hrs'])
         
+
+@app.route("/calc/", methods=["GET", "POST"])
+def calc():
+    return render_template("calc.html")
+
+
+
+
 def PredictionModel(years_education:int, hours_per_week:int) -> float:
     df = pandas.read_csv("census-income.csv")
 
@@ -26,7 +37,13 @@ def PredictionModel(years_education:int, hours_per_week:int) -> float:
 
     final_output = round(float(prediction[0]))
 
-    return final_output
+    if final_output < 0:
+        final_output = 0
+        return final_output
+    elif final_output > 1:
+        final_output = 1
+        return final_output
+
 
 
 
