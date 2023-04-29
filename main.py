@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template
 import pandas
 from sklearn.linear_model import LinearRegression
 
@@ -49,7 +49,9 @@ def predict():
         edu_num = request.form['edu']
         hrs = request.form['hrs']
         x = PredictionModel(edu_num, hrs)
-        return f'<h1 style="font-family: sans-serif">Final Output = {x}</h1><br><h1 style="font-family: sans-serif">1: <=$50K  0: >$50K</h1>'
+        return f'<title>Prediction</title><body style="background-color: white"><div style="margin: 0; position: absolute; left: 39%;"> \
+        <h1 style="font-family: sans-serif">Final Output = {x}</h1><br> \
+        <h1 style="font-family: sans-serif">1: <=$50K  0: >$50K</h1></div></body>'
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@
 ### Founders:
 1. BS Chetan Swaroop Reddy
 2. Aneesh Reddy
-3. Sathvik Kodali 
+3. Satvik Kodali 
 4. Sai Anvitha 
 
 **Tools used:**

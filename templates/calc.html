@@ -7,15 +7,15 @@
 
 {% block body %}
 
-<h1 class="title">Calculate your Income!</h1>
+<h1 class="title">Predict your Income</h1>
 
 <div class="form-container">
     <div class="form-container-inner">
         <form action="http://localhost:5000/calc/prediction" method="post">
-            <p>Enter Years of Education</p>
-            <input type="number" placeholder="Education in Years" class="form" name="edu" required>
-            <p>Enter Hours Per Week</p>
-            <input type="number" placeholder="Hours Worked Per Week" class="form" name="hrs" required> <br><br>
+            <p style="font-family: sans-serif;">Enter Years of Education</p>
+            <input type="number" class="form" name="edu" required>
+            <p style="font-family: sans-serif;">Enter Hours Per Week</p>
+            <input type="number" class="form" name="hrs" required> <br><br>
             <input type="submit" name="Submit" class="form">
         </form>
     </div>
