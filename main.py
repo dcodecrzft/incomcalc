@@ -49,19 +49,19 @@ def predict():
         edu_num = request.form['edu']
         hrs = request.form['hrs']
         x = PredictionModel(edu_num, hrs)
-        return f'<title>Prediction</title><body style="background-color: white"><div style="margin: 0; position: absolute; left: 39%;"> \
-        <h1 style="font-family: sans-serif">Final Output = {x}</h1></div><br><br><br> \
-        <div style="margin: 0; position: absolute; left: 22%;"><h1 style="font-family: sans-serif">If output is 1: Income is likely <=$50K (Higher risk of poverty) <br> \
-        If output is 0: Income is likely >$50K (Lower risk of poverty)</h1><div style="margin: 0; position: absolute; left: 42%;"><a href="/"><button style="cursor: pointer;">Home ></button></a><br> \
-        <a href="/calc/"><button style="cursor: pointer;">Try Again ></button></a></div></div></body>'
+        if x == 0:
+            return f'<title>Prediction</title><body><div style="margin: 0; position: absolute; left: 39%;"><h1 style="font-family: sans-serif;"> \
+            Final Output = {x}</h1></div><br><br><br><div style="margin: 0; position: absolute; left: 30%;"><h1 style="font-family: sans-serif;">Income is likely >$50K (Lower risk of poverty)</h1></div></body>'
+        else:
+            return f'<title>Prediction</title><body><div style="margin: 0; position: absolute; left: 39%;"><h1 style="font-family: sans-serif;"> \
+            Final Output = {x}</h1></div><br><br><br><div style="margin: 0; position: absolute; left: 30%;"><h1 style="font-family: sans-serif;">Income is likely <=$50K (Higher risk of poverty)</h1></div></body>'
+
+
 
 
 @app.route("/about/")
 def about():
     return render_template("about.html")
-
-
-
 
 
 
